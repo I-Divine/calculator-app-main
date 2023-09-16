@@ -49,13 +49,16 @@ body.theme-1 {
 }
 #display {
   background-color: var(--display-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
+  /* padding-top: 40px;
+  padding-bottom: 40px; */
   width: 100%;
   font-weight: 700;
   color: var(--display-text-color);
   text-align: right;
-  /* height: 70px; */
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   /* border: 1px solid black; */
   border-radius: 5px;
 }

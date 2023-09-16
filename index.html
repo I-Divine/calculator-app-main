@@ -28,31 +28,33 @@
 
     <link rel="stylesheet" href="style.css" />
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style></style>
+    <script defer src="script.js"></script>
   </head>
   <body class="theme-1">
     <div id="calculator">
       <div id="header">calc</div>
       <div id="display">399,981</div>
       <div id="keypad-container">
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button id="del">Del</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>+</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
-        <button>.</button>
-        <button>0</button>
-        <button>/</button>
-        <button>x</button>
-        <button style="grid-column: 1/3" id="reset">RESET</button>
-        <button style="grid-column: 3/5" id="equal">=</button>
+        <button onclick="enterInput(7)">7</button>
+        <button onclick="enterInput(8)">8</button>
+        <button onclick="enterInput(9)">9</button>
+        <button onclick="deleteValue()" id="del">Del</button>
+        <button onclick="enterInput(4)">4</button>
+        <button onclick="enterInput(5)">5</button>
+        <button onclick="enterInput(6)">6</button>
+        <button onclick="enterInput('+')">+</button>
+        <button onclick="enterInput(1)">1</button>
+        <button onclick="enterInput(2)">2</button>
+        <button onclick="enterInput(3)">3</button>
+        <button onclick="enterInput('-')">-</button>
+        <button onclick="enterInput('.')">.</button>
+        <button onclick="enterInput('0')">0</button>
+        <button onclick="enterInput('/')">/</button>
+        <button onclick="enterInput('*')">x</button>
+        <button onclick="clearDisplay();" style="grid-column: 1/3" id="reset">
+          RESET
+        </button>
+        <button onclick="solve()" style="grid-column: 3/5" id="equal">=</button>
       </div>
     </div>
 
