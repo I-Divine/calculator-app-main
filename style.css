@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   /* font-family: sans-serif; */
   font-family: "League Spartan", sans-serif;
@@ -8,11 +9,32 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--background-color);
+}
+body.theme-1 {
+  --numkey-color: white;
+  --numkey-text-color: hsl(221, 14%, 31%);
+  --numkey-shadow-color: hsl(28, 16%, 65%);
+
+  --keypad-background-color: hsl(223, 31%, 20%);
+  --background-color: hsl(222, 26%, 31%);
+
+  --text-color: white;
+
+  --display-color: hsl(224, 36%, 15%);
+  --display-text-color: white;
+
+  --equals-key-color: hsl(6, 63%, 50%);
+  --equals-key-text-color: white;
+  --equals-key-shadow-color: hsl(6, 70%, 34%);
+
+  --del-key-color: hsl(225, 21%, 49%);
+  --del-key-text-color: white;
+  --del-key-shadow-color: hsl(224, 28%, 35%);
 }
 #header {
   padding: 0px;
-  color: white;
+  color: var(--text-color);
 }
 #keypad-container {
   /* margin: auto; */
@@ -22,16 +44,16 @@ body {
   column-gap: 10px;
   row-gap: 10px;
   justify-content: center;
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--keypad-background-color);
   border-radius: 5px;
 }
 #display {
-  background-color: hsl(224, 36%, 15%);
+  background-color: var(--display-color);
   padding-top: 40px;
   padding-bottom: 40px;
   width: 100%;
   font-weight: 700;
-  color: white;
+  color: var(--display-text-color);
   text-align: right;
   /* height: 70px; */
   /* border: 1px solid black; */
@@ -48,28 +70,29 @@ body {
 }
 button {
   border: none;
-  background-color: white;
-  color: hsl(221, 14%, 31%);
-  box-shadow: inset 0px -5px 0px 0px hsl(28, 16%, 65%);
+  background-color: var(--numkey-color);
+  color: var(--numkey-text-color);
+  box-shadow: inset 0px -5px 0px 0px var(--numkey-shadow-color);
   font-size: 0.8em;
   font-weight: 800;
   /* text-align: center; */
   border-radius: 5px;
+  cursor: pointer;
 }
 #reset,
 #del {
   font-size: 0.5em;
-  background-color: hsl(225, 21%, 49%);
-  color: white;
-  box-shadow: inset 0px -5px 0px 0px hsl(224, 28%, 35%);
+  background-color: var(--del-key-color);
+  color: var(--del-key-text-color);
+  box-shadow: inset 0px -5px 0px 0px var(--del-key-shadow-color);
 }
 #equal {
   font-size: 0.5em;
 
-  box-shadow: inset 0px -5px 0px 0px hsl(6, 70%, 34%);
+  box-shadow: inset 0px -5px 0px 0px var(--equals-key-shadow-color);
 
-  background-color: hsl(6, 63%, 50%);
-  color: white;
+  background-color: var(--equals-key-color);
+  color: var(--equals-key-text-color);
 }
 /* #keypad-container && */
 .attribution {
@@ -77,5 +100,5 @@ button {
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  /* color: hsl(228, 45%, 44%); */
 }
