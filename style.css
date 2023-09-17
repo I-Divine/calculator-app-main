@@ -4,6 +4,7 @@
 
 body {
   /* font-family: sans-serif; */
+  --transition-delay: 500ms;
   font-family: "League Spartan", sans-serif;
   font-size: 32px;
   display: flex;
@@ -12,7 +13,8 @@ body {
   background-color: var(--background-color);
 }
 body.theme-1 {
-  --numkey-color: white;
+  --numkey-color: hsl(30, 25%, 89%);
+  --numkey-hover-color: hsl(0, 0%, 99%);
   --numkey-text-color: hsl(221, 14%, 31%);
   --numkey-shadow-color: hsl(28, 16%, 65%);
 
@@ -25,16 +27,67 @@ body.theme-1 {
   --display-text-color: white;
 
   --equals-key-color: hsl(6, 63%, 50%);
+  --equals-key-hover-color: hsl(5, 67%, 59%);
   --equals-key-text-color: white;
   --equals-key-shadow-color: hsl(6, 70%, 34%);
 
   --del-key-color: hsl(225, 21%, 49%);
+  --del-key-hover-color: hsl(225, 60%, 76%);
   --del-key-text-color: white;
   --del-key-shadow-color: hsl(224, 28%, 35%);
+}
+body.theme-2 {
+  --numkey-color: hsl(45, 7%, 89%);
+  --numkey-hover-color: hsl(30, 100%, 100%);
+  --numkey-text-color: hsl(60, 10%, 19%);
+  --numkey-shadow-color: hsl(35, 11%, 61%);
+
+  --keypad-background-color: hsl(0, 5%, 81%);
+  --background-color: hsl(0, 0%, 90%);
+
+  --text-color: var(--numkey-text-color);
+
+  --display-color: hsl(0, 0%, 93%);
+  --display-text-color: var(--numkey-text-color);
+
+  --equals-key-color: hsl(25, 98%, 40%);
+  --equals-key-hover-color: hsl(25, 72%, 59%);
+  --equals-key-text-color: white;
+  --equals-key-shadow-color: hsl(25, 99%, 27%);
+
+  --del-key-color: hsl(185, 42%, 37%);
+  --del-key-hover-color: hsl(185, 51%, 58%);
+  --del-key-text-color: white;
+  --del-key-shadow-color: hsl(185, 58%, 25%);
+}
+body.theme-3 {
+  --numkey-color: hsl(268, 47%, 21%);
+  --numkey-hover-color: hsl(268, 48%, 45%);
+  --numkey-text-color: hsl(52, 100%, 62%);
+  --numkey-shadow-color: hsl(290, 70%, 36%);
+
+  --keypad-background-color: hsl(268, 71%, 12%);
+  --background-color: hsl(268, 75%, 9%);
+
+  --text-color: var(--numkey-text-color);
+
+  --display-color: var(--keypad-background-color);
+  --display-text-color: var(--numkey-text-color);
+
+  --equals-key-color: hsl(176, 100%, 44%);
+  --equals-key-hover-color: hsl(176, 64%, 66%);
+  --equals-key-text-color: hsl(198, 20%, 13%);
+  --equals-key-shadow-color: hsl(177, 92%, 70%);
+
+  --del-key-color: hsl(281, 89%, 26%);
+  --del-key-hover-color: hsl(281, 51%, 53%);
+  --del-key-text-color: white;
+  --del-key-shadow-color: hsl(285, 91%, 52%);
 }
 #header {
   padding: 0px;
   color: var(--text-color);
+  transition: var(--transition-delay);
 }
 #keypad-container {
   /* margin: auto; */
@@ -46,12 +99,14 @@ body.theme-1 {
   justify-content: center;
   background-color: var(--keypad-background-color);
   border-radius: 5px;
+  transition: var(--transition-delay);
 }
 #display {
   background-color: var(--display-color);
   /* padding-top: 40px;
   padding-bottom: 40px; */
   width: 100%;
+  overflow: hidden;
   font-weight: 700;
   color: var(--display-text-color);
   text-align: right;
@@ -61,9 +116,12 @@ body.theme-1 {
   justify-content: flex-end;
   /* border: 1px solid black; */
   border-radius: 5px;
+  transition: var(--transition-delay);
 }
+
 #calculator {
-  flex-basis: 320px;
+  min-width: 320px;
+  width: 30vw;
   /* border: 1px solid black; */
 }
 #calculator > div {
@@ -72,6 +130,7 @@ body.theme-1 {
   padding: 20px;
 }
 button {
+  transition: var(--transition-delay);
   border: none;
   background-color: var(--numkey-color);
   color: var(--numkey-text-color);
@@ -82,12 +141,24 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+button:hover {
+  background-color: var(--numkey-hover-color);
+}
+#reset:hover,
+#del:hover {
+  background-color: var(--del-key-hover-color);
+  transition: var(--transition-delay);
+}
 #reset,
 #del {
   font-size: 0.5em;
   background-color: var(--del-key-color);
   color: var(--del-key-text-color);
   box-shadow: inset 0px -5px 0px 0px var(--del-key-shadow-color);
+  transition: var(--transition-delay);
+}
+#equal:hover {
+  background-color: var(--equals-key-hover-color);
 }
 #equal {
   font-size: 0.5em;
@@ -96,6 +167,7 @@ button {
 
   background-color: var(--equals-key-color);
   color: var(--equals-key-text-color);
+  transition: var(--transition-delay);
 }
 /* #keypad-container && */
 .attribution {
