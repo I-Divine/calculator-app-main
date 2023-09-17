@@ -32,8 +32,48 @@
   </head>
   <body class="theme-1">
     <div id="calculator">
-      <button id="swap_theme" onclick="swap_theme()">swap themes</button>
-      <div id="header">calc</div>
+      <!-- <button id="swap_theme" onclick="swap_theme()">swap themes</button> -->
+      <div id="header">
+        <div id="head" style="padding: 0px; font-weight: 800; font-size: 30px">
+          calc
+        </div>
+        <!-- <div
+          style="text-transform: capitalize; font-weight: 700; font-size: 15px"
+        >
+          theme
+        </div> -->
+        <div id="theme-container">
+          <div
+            style="
+              font-weight: 800;
+              text-transform: uppercase;
+              margin-right: 30px;
+            "
+          >
+            theme
+          </div>
+          <div>
+            <div
+              style="
+                margin-bottom: 5px;
+                width: 100%;
+                /* font-size: 0.6em; */
+                font-weight: 800;
+                text-align: center;
+                display: flex;
+                justify-content: space-around;
+              "
+            >
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+            </div>
+            <div class="toggle-container">
+              <div class="toggle-button"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="display"></div>
       <div id="keypad-container">
         <button onclick="enterInput(7)">7</button>

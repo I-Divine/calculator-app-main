@@ -84,13 +84,29 @@ body.theme-3 {
   --del-key-text-color: white;
   --del-key-shadow-color: hsl(285, 91%, 52%);
 }
+#head {
+  font-weight: 700;
+}
+#theme-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 12px;
+}
 #header {
-  padding: 0px;
+  /* padding-: 0px; */
+  margin-bottom: 20px;
+  margin-top: 20px;
+  align-items: flex-end;
   color: var(--text-color);
-  transition: var(--transition-delay);
+  transition: ease-in var(--transition-delay);
+  justify-content: space-between;
+  display: flex;
 }
 #keypad-container {
   /* margin: auto; */
+  padding: 20px;
+
   display: grid;
   grid-template-columns: 21% 21% 21% 21%;
   grid-template-rows: 60px 60px 60px 60px 60px;
@@ -99,10 +115,12 @@ body.theme-3 {
   justify-content: center;
   background-color: var(--keypad-background-color);
   border-radius: 5px;
-  transition: var(--transition-delay);
+  transition: ease-in var(--transition-delay);
 }
 #display {
   background-color: var(--display-color);
+  margin-bottom: 20px;
+
   /* padding-top: 40px;
   padding-bottom: 40px; */
   width: 100%;
@@ -116,21 +134,19 @@ body.theme-3 {
   justify-content: flex-end;
   /* border: 1px solid black; */
   border-radius: 5px;
-  transition: var(--transition-delay);
+  transition: ease-in var(--transition-delay);
 }
 
 #calculator {
-  min-width: 320px;
+  min-width: 330px;
   width: 30vw;
   /* border: 1px solid black; */
 }
 #calculator > div {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  padding: 20px;
+  /* margin-bottom: 20px; */
 }
 button {
-  transition: var(--transition-delay);
+  transition: ease-in var(--transition-delay);
   border: none;
   background-color: var(--numkey-color);
   color: var(--numkey-text-color);
@@ -147,7 +163,7 @@ button:hover {
 #reset:hover,
 #del:hover {
   background-color: var(--del-key-hover-color);
-  transition: var(--transition-delay);
+  transition: ease-in var(--transition-delay);
 }
 #reset,
 #del {
@@ -155,7 +171,7 @@ button:hover {
   background-color: var(--del-key-color);
   color: var(--del-key-text-color);
   box-shadow: inset 0px -5px 0px 0px var(--del-key-shadow-color);
-  transition: var(--transition-delay);
+  transition: ease-in var(--transition-delay);
 }
 #equal:hover {
   background-color: var(--equals-key-hover-color);
@@ -167,7 +183,25 @@ button:hover {
 
   background-color: var(--equals-key-color);
   color: var(--equals-key-text-color);
-  transition: var(--transition-delay);
+  transition: ease-in var(--transition-delay);
+}
+.toggle-container {
+  width: 75px;
+  position: relative;
+  height: 25px;
+  background-color: var(--keypad-background-color);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.toggle-button {
+  transition: ease-in var(--transition-delay);
+
+  position: absolute;
+  margin: 4px;
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
+  background-color: var(--equals-key-color);
 }
 /* #keypad-container && */
 .attribution {

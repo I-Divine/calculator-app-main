@@ -1,13 +1,16 @@
 let operationStack = "";
 const display = document.getElementById("display");
 const enterInput = (value) => {
-  if (operationStack.length <= 14) {
+  if (operationStack.toString.length <= 14) {
+    console.log("pressed");
     if (operationStack == "Syntax Error" || operationStack == "Infinity") {
       operationStack = "";
     }
     operationStack = operationStack + value.toString();
     updateDisplay();
   }
+  // console.log(operationStack.toString.length);
+  // console.log(operationStack);
 };
 const updateDisplay = () => {
   display.textContent = operationStack;
@@ -49,4 +52,23 @@ const swap_theme = () => {
     document.querySelector("body").className = "theme-3";
   else if (body.className == "theme-3")
     document.querySelector("body").className = "theme-1";
+};
+let currentTheme = 1;
+document.querySelector(".toggle-container").onclick = () => {
+  const toggle_button = document.querySelector(".toggle-button");
+  swap_theme();
+  switch (currentTheme) {
+    case 1:
+      toggle_button.style = "transform: translateX(25px);";
+      currentTheme = 2;
+      break;
+    case 2:
+      toggle_button.style = "transform: translateX(50px)";
+      currentTheme = 3;
+      break;
+    case 3:
+      toggle_button.style = "transform: translateX(0px)";
+      currentTheme = 1;
+      break;
+  }
 };
