@@ -39,12 +39,6 @@ const solve = () => {
 };
 
 const swap_theme = () => {
-  //   document.getElementsByClassName("theme-1")
-  //     ? console.log(document.getElementsByClassName("theme-1"))
-  //     : document.getElementsByClassName("theme-2")
-  //     ? console.log(document.getElementsByClassName("theme-2"))
-  //     : console.log(document.getElementsByClassName("theme-3"));
-  // document.getElementById("theme-1")? document.getElementById("theme-1").setAttribute("class='theme-2'")
   const body = document.querySelector("body");
   if (body.className == "theme-1")
     document.querySelector("body").className = "theme-2";

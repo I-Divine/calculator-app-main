@@ -31,79 +31,83 @@
     <script defer src="script.js"></script>
   </head>
   <body class="theme-1">
-    <div id="calculator">
-      <!-- <button id="swap_theme" onclick="swap_theme()">swap themes</button> -->
-      <div id="header">
-        <div id="head" style="padding: 0px; font-weight: 800; font-size: 30px">
-          calc
-        </div>
-        <!-- <div
-          style="text-transform: capitalize; font-weight: 700; font-size: 15px"
-        >
-          theme
-        </div> -->
-        <div id="theme-container">
+    <main class="">
+      <div id="calculator">
+        <!-- <button id="swap_theme" onclick="swap_theme()">swap themes</button> -->
+        <div id="header">
           <div
-            style="
-              font-weight: 800;
-              text-transform: uppercase;
-              margin-right: 30px;
-            "
+            id="head"
+            style="padding: 0px; font-weight: 800; font-size: 30px"
           >
-            theme
+            calc
           </div>
-          <div>
+
+          <div id="theme-container">
             <div
               style="
-                margin-bottom: 5px;
-                width: 100%;
-                /* font-size: 0.6em; */
                 font-weight: 800;
-                text-align: center;
-                display: flex;
-                justify-content: space-around;
+                text-transform: uppercase;
+                margin-right: 30px;
               "
             >
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
+              theme
             </div>
-            <div class="toggle-container">
-              <div class="toggle-button"></div>
+            <div>
+              <div
+                style="
+                  margin-bottom: 5px;
+                  width: 100%;
+                  /* font-size: 0.6em; */
+                  font-weight: 800;
+                  text-align: center;
+                  display: flex;
+                  justify-content: space-around;
+                "
+              >
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+              </div>
+              <div class="toggle-container">
+                <div class="toggle-button"></div>
+              </div>
             </div>
           </div>
         </div>
+        <div id="display"></div>
+        <div id="keypad-container">
+          <button onclick="enterInput(7)">7</button>
+          <button onclick="enterInput(8)">8</button>
+          <button onclick="enterInput(9)">9</button>
+          <button onclick="deleteValue()" id="del">Del</button>
+          <button onclick="enterInput(4)">4</button>
+          <button onclick="enterInput(5)">5</button>
+          <button onclick="enterInput(6)">6</button>
+          <button onclick="enterInput('+')">+</button>
+          <button onclick="enterInput(1)">1</button>
+          <button onclick="enterInput(2)">2</button>
+          <button onclick="enterInput(3)">3</button>
+          <button onclick="enterInput('-')">-</button>
+          <button onclick="enterInput('.')">.</button>
+          <button onclick="enterInput('0')">0</button>
+          <button onclick="enterInput('/')">/</button>
+          <button onclick="enterInput('*')">x</button>
+          <button onclick="clearDisplay();" style="grid-column: 1/3" id="reset">
+            RESET
+          </button>
+          <button onclick="solve()" style="grid-column: 3/5" id="equal">
+            =
+          </button>
+        </div>
       </div>
-      <div id="display"></div>
-      <div id="keypad-container">
-        <button onclick="enterInput(7)">7</button>
-        <button onclick="enterInput(8)">8</button>
-        <button onclick="enterInput(9)">9</button>
-        <button onclick="deleteValue()" id="del">Del</button>
-        <button onclick="enterInput(4)">4</button>
-        <button onclick="enterInput(5)">5</button>
-        <button onclick="enterInput(6)">6</button>
-        <button onclick="enterInput('+')">+</button>
-        <button onclick="enterInput(1)">1</button>
-        <button onclick="enterInput(2)">2</button>
-        <button onclick="enterInput(3)">3</button>
-        <button onclick="enterInput('-')">-</button>
-        <button onclick="enterInput('.')">.</button>
-        <button onclick="enterInput('0')">0</button>
-        <button onclick="enterInput('/')">/</button>
-        <button onclick="enterInput('*')">x</button>
-        <button onclick="clearDisplay();" style="grid-column: 1/3" id="reset">
-          RESET
-        </button>
-        <button onclick="solve()" style="grid-column: 3/5" id="equal">=</button>
-      </div>
-    </div>
+    </main>
 
-    <!-- <div class="attribution">
+    <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
+      >. Coded by
+      <a href="https://www.github.com/I-Divine">Igwedinma Ifechukwu Divine</a>.
+    </div>
   </body>
 </html>

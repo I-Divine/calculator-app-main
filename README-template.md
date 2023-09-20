@@ -1,6 +1,6 @@
 # Frontend Mentor - Calculator app solution
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -31,15 +31,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Theme 1 (Desktop Layout)](./screenshots/Desktop-layout-theme-1.jpeg)
+![Theme 1 (Mobile Layout)](./screenshots/Mobile-layout-theme-1.jpeg)
+![Theme 2 (Mobile Layout)](./screenshots/Mobile-layout-theme-2.jpeg)
+![Theme 3 (Mobile Layout)](./screenshots/Mobile-layout-theme-3.jpeg)
 
 ### Links
 
@@ -55,11 +50,6 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
@@ -70,15 +60,132 @@ To see how you can add code snippets, see below:
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+/* Just learnt how to use multiple themes */
+body.theme-1 {
+  --numkey-color: hsl(30, 25%, 89%);
+  --numkey-hover-color: white;
+  --numkey-text-color: hsl(221, 14%, 31%);
+  --numkey-shadow-color: hsl(28, 16%, 65%);
+
+  --keypad-background-color: hsl(223, 31%, 20%);
+  --background-color: hsl(222, 26%, 31%);
+
+  --text-color: white;
+
+  --display-color: hsl(224, 36%, 15%);
+  --display-text-color: white;
+
+  --equals-key-color: hsl(6, 63%, 50%);
+  --equals-key-hover-color: hsl(5, 67%, 59%);
+  --equals-key-text-color: white;
+  --equals-key-shadow-color: hsl(6, 70%, 34%);
+
+  --del-key-color: hsl(225, 21%, 49%);
+  --del-key-hover-color: hsl(225, 60%, 76%);
+  --del-key-text-color: white;
+  --del-key-shadow-color: hsl(224, 28%, 35%);
+}
+body.theme-2 {
+  --numkey-color: hsl(45, 7%, 89%);
+  --numkey-hover-color: hsl(30, 100%, 100%);
+  --numkey-text-color: hsl(60, 10%, 19%);
+  --numkey-shadow-color: hsl(35, 11%, 61%);
+
+  --keypad-background-color: hsl(0, 5%, 81%);
+  --background-color: hsl(0, 0%, 90%);
+
+  --text-color: var(--numkey-text-color);
+
+  --display-color: hsl(0, 0%, 93%);
+  --display-text-color: var(--numkey-text-color);
+
+  --equals-key-color: hsl(25, 98%, 40%);
+  --equals-key-hover-color: hsl(25, 72%, 59%);
+  --equals-key-text-color: white;
+  --equals-key-shadow-color: hsl(25, 99%, 27%);
+
+  --del-key-color: hsl(185, 42%, 37%);
+  --del-key-hover-color: hsl(185, 51%, 58%);
+  --del-key-text-color: white;
+  --del-key-shadow-color: hsl(185, 58%, 25%);
+}
+body.theme-3 {
+  --numkey-color: hsl(268, 47%, 21%);
+  --numkey-hover-color: hsl(268, 48%, 45%);
+  --numkey-text-color: hsl(52, 100%, 62%);
+  --numkey-shadow-color: hsl(290, 70%, 36%);
+
+  --keypad-background-color: hsl(268, 71%, 12%);
+  --background-color: hsl(268, 75%, 9%);
+
+  --text-color: var(--numkey-text-color);
+
+  --display-color: var(--keypad-background-color);
+  --display-text-color: var(--numkey-text-color);
+
+  --equals-key-color: hsl(176, 100%, 44%);
+  --equals-key-hover-color: hsl(176, 64%, 66%);
+  --equals-key-text-color: hsl(198, 20%, 13%);
+  --equals-key-shadow-color: hsl(177, 92%, 70%);
+
+  --del-key-color: hsl(281, 89%, 26%);
+  --del-key-hover-color: hsl(281, 51%, 53%);
+  --del-key-text-color: white;
+  --del-key-shadow-color: hsl(285, 91%, 52%);
+}
+/* Also learnt how to make a toggle */
+.toggle-container {
+  width: 75px;
+  position: relative;
+  height: 25px;
+  background-color: var(--keypad-background-color);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.toggle-button {
+  transition: ease-out var(--transition-delay);
+
+  position: absolute;
+  margin: 4px;
+  width: 17px;
+  height: 17px;
+  border-radius: 17px;
+  background-color: var(--equals-key-color);
 }
 ```
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+// this code was for the toggle and themes
+const swap_theme = () => {
+  const body = document.querySelector("body");
+  if (body.className == "theme-1")
+    document.querySelector("body").className = "theme-2";
+  else if (body.className == "theme-2")
+    document.querySelector("body").className = "theme-3";
+  else if (body.className == "theme-3")
+    document.querySelector("body").className = "theme-1";
+};
+let currentTheme = 1;
+document.querySelector(".toggle-container").onclick = () => {
+  const toggle_button = document.querySelector(".toggle-button");
+  swap_theme();
+  switch (currentTheme) {
+    case 1:
+      toggle_button.style = "transform: translateX(25px);";
+      currentTheme = 2;
+      break;
+    case 2:
+      toggle_button.style = "transform: translateX(50px)";
+      currentTheme = 3;
+      break;
+    case 3:
+      toggle_button.style = "transform: translateX(0px)";
+      currentTheme = 1;
+      break;
+  }
+};
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.

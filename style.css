@@ -1,20 +1,24 @@
 * {
   box-sizing: border-box;
 }
-
 body {
-  /* font-family: sans-serif; */
-  --transition-delay: 500ms;
+  margin: 0;
+  padding: 0;
   font-family: "League Spartan", sans-serif;
   font-size: 32px;
+  background-color: var(--background-color);
+}
+main {
+  height: 90vh;
+  --transition-delay: 500ms;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--background-color);
 }
+
 body.theme-1 {
   --numkey-color: hsl(30, 25%, 89%);
-  --numkey-hover-color: hsl(0, 0%, 99%);
+  --numkey-hover-color: white;
   --numkey-text-color: hsl(221, 14%, 31%);
   --numkey-shadow-color: hsl(28, 16%, 65%);
 
@@ -94,35 +98,31 @@ body.theme-3 {
   font-size: 12px;
 }
 #header {
-  /* padding-: 0px; */
   margin-bottom: 20px;
   margin-top: 20px;
   align-items: flex-end;
   color: var(--text-color);
-  transition: ease-in var(--transition-delay);
+  transition: ease-out var(--transition-delay);
   justify-content: space-between;
   display: flex;
 }
 #keypad-container {
-  /* margin: auto; */
   padding: 20px;
 
   display: grid;
   grid-template-columns: 21% 21% 21% 21%;
-  grid-template-rows: 60px 60px 60px 60px 60px;
-  column-gap: 10px;
-  row-gap: 10px;
+  grid-template-rows: 50px 50px 50px 50px 50px;
+  column-gap: 15px;
+  row-gap: 20px;
   justify-content: center;
   background-color: var(--keypad-background-color);
   border-radius: 5px;
-  transition: ease-in var(--transition-delay);
+  transition: ease-out var(--transition-delay);
 }
 #display {
   background-color: var(--display-color);
   margin-bottom: 20px;
-
-  /* padding-top: 40px;
-  padding-bottom: 40px; */
+  padding: 20px;
   width: 100%;
   overflow: hidden;
   font-weight: 700;
@@ -132,32 +132,30 @@ body.theme-3 {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* border: 1px solid black; */
+
   border-radius: 5px;
-  transition: ease-in var(--transition-delay);
+  transition: ease-out var(--transition-delay);
 }
 
 #calculator {
   min-width: 330px;
-  width: 30vw;
-  /* border: 1px solid black; */
+  width: 32vw;
 }
 #calculator > div {
-  /* margin-bottom: 20px; */
 }
 button {
-  transition: ease-in var(--transition-delay);
+  transition: ease-out var(--transition-delay);
   border: none;
   background-color: var(--numkey-color);
   color: var(--numkey-text-color);
   box-shadow: inset 0px -5px 0px 0px var(--numkey-shadow-color);
   font-size: 0.8em;
   font-weight: 800;
-  /* text-align: center; */
   border-radius: 5px;
   cursor: pointer;
 }
 button:hover {
+  transition: ease-in var(--transition-delay);
   background-color: var(--numkey-hover-color);
 }
 #reset:hover,
@@ -171,9 +169,10 @@ button:hover {
   background-color: var(--del-key-color);
   color: var(--del-key-text-color);
   box-shadow: inset 0px -5px 0px 0px var(--del-key-shadow-color);
-  transition: ease-in var(--transition-delay);
+  transition: ease-out var(--transition-delay);
 }
 #equal:hover {
+  transition: ease-in var(--transition-delay);
   background-color: var(--equals-key-hover-color);
 }
 #equal {
@@ -183,7 +182,7 @@ button:hover {
 
   background-color: var(--equals-key-color);
   color: var(--equals-key-text-color);
-  transition: ease-in var(--transition-delay);
+  transition: ease-out var(--transition-delay);
 }
 .toggle-container {
   width: 75px;
@@ -194,7 +193,7 @@ button:hover {
   cursor: pointer;
 }
 .toggle-button {
-  transition: ease-in var(--transition-delay);
+  transition: ease-out var(--transition-delay);
 
   position: absolute;
   margin: 4px;
@@ -203,11 +202,18 @@ button:hover {
   border-radius: 17px;
   background-color: var(--equals-key-color);
 }
-/* #keypad-container && */
 .attribution {
-  font-size: 11px;
+  color: var(--text-color);
+  font-size: 15px;
   text-align: center;
 }
+.attribution a:hover {
+  color: var(--equals-key-hover-color);
+  transition: ease-in var(--transition-delay);
+}
 .attribution a {
-  /* color: hsl(228, 45%, 44%); */
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--equals-key-color);
 }
